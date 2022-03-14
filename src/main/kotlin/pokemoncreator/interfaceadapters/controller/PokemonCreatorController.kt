@@ -11,22 +11,18 @@ class PokemonCreatorController(private val createPokemonUseCaseInput: CreatePoke
     fun createPokemon(
         name: String,
         description: String,
-        type: PokemonType,
+        type: String,
         power: Int,
-        color: PokemonColors,
+        color: String,
     ) {
         val processedName = name.trim()
         val processedDescription = description.trimIndent()
-        val processedType = type.name.lowercase(Locale.ENGLISH)
-            .replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.ENGLISH) else it.toString() }
-        val processedColor = color.name.lowercase(Locale.ENGLISH)
-            .replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.ENGLISH) else it.toString() }
         val request = CreatePokemonRequestModel(
             processedName,
             processedDescription,
-            processedType,
+            type,
             power,
-            processedColor
+            color,
         )
         controllerScope.launch {
             createPokemonUseCaseInput.execute(request)

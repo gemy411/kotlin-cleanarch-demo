@@ -7,6 +7,7 @@ import pokemoncreator.interfaceadapters.controller.PokemonType
 import pokemoncreator.interfaceadapters.controller.PokemonCreatorController
 import pokemoncreator.interfaceadapters.presenter.PokemonPresenter
 import pokemoncreator.interfaceadapters.view.PokemonView
+import pokemoncreator.ui.model.PokemonUIModel
 
 // DI section
 // data
@@ -26,23 +27,44 @@ class UIComponent: PokemonView {
     private val controller = PokemonCreatorController(createPokemonUseCase)
 
     init {
+        println("Welcome to Pokemon creator!")
+
+        println("Please start by entering the Pokemon's name..")
+        val name = readlnOrNull()
+
+        println("Now it's time for a poetic descriptive and non-self-destructive description..")
+        val desc = readlnOrNull() ?: ""
+
+        println("""
+            Enter a Pokemon type from ${PokemonType.values().joinToString()}....
+        """.trimIndent())
+        val type = readlnOrNull() ?: ""
+
+        println("How much power does it have??")
+        val power = readlnOrNull()?.toIntOrNull() ?: 0
+
+        println("""
+            Enter a Pokemon color from ${PokemonColors.values().joinToString()}....
+        """.trimIndent())
+        val color = readlnOrNull() ?: ""
+
+        println("LOADING.....")
+
         controller.createPokemon(
-            "   Charmendar ",
-            """
-               This pokemon is a fire pokemon and is truly very powerful!  
-            """,
-            PokemonType.FIRE,
+            name ?: "No name",
+            desc,
+            type,
             44,
-            PokemonColors.ORANGE,
+            color,
         )
-
     }
 
-    override fun showError() {
-        // update UI
+
+    override fun onPokemonCreated(pokemonUIModel: PokemonUIModel) {
+        println("Pokemon created as $pokemonUIModel")
     }
 
-    override fun hideError() {
-        // update UI
+    override fun onPokemonCreationFailed(errorMessage: String) {
+        println("Pokemon creation failed :( :( with message $errorMessage")
     }
 }
