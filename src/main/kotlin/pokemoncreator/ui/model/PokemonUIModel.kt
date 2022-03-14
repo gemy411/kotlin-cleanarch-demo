@@ -1,8 +1,8 @@
 package pokemoncreator.ui.model
 
 import pokemoncreator.domain.model.PokemonDomainModel
-import pokemoncreator.interfaceadapters.controller.PokemonColors
-import pokemoncreator.interfaceadapters.controller.PokemonType
+import pokemoncreator.interfaceadapters.models.PokemonColors
+import pokemoncreator.interfaceadapters.models.PokemonType
 
 data class PokemonUIModel(
     val name: String,
@@ -15,7 +15,7 @@ data class PokemonUIModel(
 fun PokemonDomainModel.toUI() = PokemonUIModel(
     name = name ,
     description = description,
-    type = PokemonType.values().find { it.name.lowercase() == type.lowercase() }!!,
+    type = PokemonType.values().find { it.name.lowercase() == type.lowercase() } ?: throw IllegalArgumentException("Type not supported!"),
     power = power,
-    color = PokemonColors.values().find { it.name.lowercase() == color.lowercase() }!!
+    color = PokemonColors.values().find { it.name.lowercase() == color.lowercase() } ?: throw IllegalArgumentException("Color not supported!"),
 )

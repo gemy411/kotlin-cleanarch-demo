@@ -3,9 +3,9 @@ package pokemoncreator.ui
 import kotlinx.coroutines.*
 import pokemoncreator.data.repo.PokemonRepoImpl
 import pokemoncreator.domain.usecase.CreatePokemonUseCase
-import pokemoncreator.interfaceadapters.controller.PokemonColors
-import pokemoncreator.interfaceadapters.controller.PokemonType
 import pokemoncreator.interfaceadapters.controller.PokemonCreatorController
+import pokemoncreator.interfaceadapters.models.PokemonColors
+import pokemoncreator.interfaceadapters.models.PokemonType
 import pokemoncreator.interfaceadapters.presenter.PokemonPresenter
 import pokemoncreator.interfaceadapters.view.PokemonView
 import pokemoncreator.ui.model.PokemonUIModel
@@ -26,6 +26,7 @@ class UIComponent: PokemonView {
 
     // adapter
     private val controller = PokemonCreatorController(createPokemonUseCase)
+
 
     //region Do not open!
     private val uiScope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
@@ -79,7 +80,7 @@ class UIComponent: PokemonView {
             name ?: "No name",
             desc,
             type,
-            44,
+            power,
             color,
         )
     }
