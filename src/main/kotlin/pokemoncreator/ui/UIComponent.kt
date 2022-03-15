@@ -1,7 +1,7 @@
 package pokemoncreator.ui
 
 import kotlinx.coroutines.*
-import pokemoncreator.data.repo.PokemonRepoImpl
+import pokemoncreator.data.gateway.PokemonCreationGatewayImpl
 import pokemoncreator.domain.usecase.CreatePokemonUseCase
 import pokemoncreator.interfaceadapters.controller.PokemonCreatorController
 import pokemoncreator.interfaceadapters.models.PokemonColors
@@ -12,7 +12,7 @@ import pokemoncreator.ui.model.PokemonUIModel
 
 // DI section
 // data
-private val pokemonRepo = PokemonRepoImpl()
+private val pokemonCreationGateway = PokemonCreationGatewayImpl()
 
 class UIComponent: PokemonView {
 
@@ -22,7 +22,7 @@ class UIComponent: PokemonView {
     }
 
     // User case inter-actor
-    private val createPokemonUseCase  = CreatePokemonUseCase(pokemonRepo, presenter)
+    private val createPokemonUseCase  = CreatePokemonUseCase(pokemonCreationGateway, presenter)
 
     // adapter
     private val controller = PokemonCreatorController(createPokemonUseCase)

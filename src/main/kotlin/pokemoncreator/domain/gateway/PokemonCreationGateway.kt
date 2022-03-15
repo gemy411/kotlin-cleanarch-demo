@@ -1,8 +1,8 @@
-package pokemoncreator.domain.repo
+package pokemoncreator.domain.gateway
 
 import pokemoncreator.domain.model.CreatePokemonRequestModel
 import pokemoncreator.domain.model.PokemonDomainModel
 
-interface PokemonRepo {
+interface PokemonCreationGateway {
     suspend fun createPokemon(requestData: CreatePokemonRequestModel): PokemonDomainModel
 }

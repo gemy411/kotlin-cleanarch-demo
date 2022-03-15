@@ -1,11 +1,11 @@
-package pokemoncreator.data.repo
+package pokemoncreator.data.gateway
 
 import kotlinx.coroutines.delay
+import pokemoncreator.domain.gateway.PokemonCreationGateway
 import pokemoncreator.domain.model.CreatePokemonRequestModel
 import pokemoncreator.domain.model.PokemonDomainModel
-import pokemoncreator.domain.repo.PokemonRepo
 
-class PokemonRepoImpl: PokemonRepo {
+class PokemonCreationGatewayImpl: PokemonCreationGateway {
     override suspend fun createPokemon(requestData: CreatePokemonRequestModel): PokemonDomainModel {
         delay(3000L)
         val (name, description, type, power, color) = requestData
