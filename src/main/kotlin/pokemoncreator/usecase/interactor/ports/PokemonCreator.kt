@@ -1,7 +1,7 @@
-package pokemoncreator.usecase.usecase.ports
+package pokemoncreator.usecase.interactor.ports
 
 import pokemoncreator.entity.model.PokemonDataEntity
-import pokemoncreator.usecase.usecase.model.CreatePokemonRequestModel
+import pokemoncreator.usecase.interactor.model.CreatePokemonRequestModel
 
 interface PokemonCreator {
     suspend fun createPokemon(requestData: CreatePokemonRequestModel): PokemonDataEntity

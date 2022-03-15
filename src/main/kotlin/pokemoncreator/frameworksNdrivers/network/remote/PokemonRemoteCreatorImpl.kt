@@ -5,11 +5,13 @@ import pokemoncreator.entity.model.PokemonDataEntity
 import pokemoncreator.frameworksNdrivers.network.model.PokemonNetworkModel
 import pokemoncreator.frameworksNdrivers.network.model.toEntity
 import pokemoncreator.interfaceadapters.ports.PokemonRemoteCreator
-import pokemoncreator.usecase.usecase.model.CreatePokemonRequestModel
+import pokemoncreator.usecase.interactor.model.CreatePokemonRequestModel
 
-class PokemonRemoteCreatorImpl(
-   // can depend on a third party handling HTTP requests
-): PokemonRemoteCreator {
+/**
+ * This is where the actual http request is being made. But, if you are using an ORM wrapping the http requests into a
+ * set of functions, then the ORM itself would be in the interface adapters layer
+ */
+class PokemonRemoteCreatorImpl(): PokemonRemoteCreator {
     override suspend fun createPokemon(requestData: CreatePokemonRequestModel): PokemonDataEntity {
         // simulate calling an API
         delay(3000L)

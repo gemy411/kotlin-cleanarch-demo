@@ -3,7 +3,7 @@ package pokemoncreator.interfaceadapters.presenter
 import pokemoncreator.entity.model.PokemonDataEntity
 import pokemoncreator.frameworksNdrivers.ui.model.toUI
 import pokemoncreator.interfaceadapters.ports.PokemonView
-import pokemoncreator.usecase.usecase.ports.CreatePokemonOutputPort
+import pokemoncreator.usecase.interactor.ports.CreatePokemonOutputPort
 
 class PokemonPresenter(private val pokemonView: PokemonView): CreatePokemonOutputPort {
 

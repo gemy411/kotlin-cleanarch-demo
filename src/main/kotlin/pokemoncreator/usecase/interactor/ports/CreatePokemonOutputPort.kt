@@ -1,4 +1,4 @@
-package pokemoncreator.usecase.usecase.ports
+package pokemoncreator.usecase.interactor.ports
 
 import pokemoncreator.entity.model.PokemonDataEntity
 

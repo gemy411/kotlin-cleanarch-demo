@@ -5,7 +5,7 @@ import pokemoncreator.interfaceadapters.controller.PokemonCreatorController
 import pokemoncreator.interfaceadapters.gateway.PokemonCreatorImpl
 import pokemoncreator.interfaceadapters.ports.PokemonView
 import pokemoncreator.interfaceadapters.presenter.PokemonPresenter
-import pokemoncreator.usecase.usecase.CreatePokemonUseCaseInteractor
+import pokemoncreator.usecase.interactor.CreatePokemonUseCaseInteractor
 
 object Injector {
     private fun getCreatePokemonUseCase(view: PokemonView): CreatePokemonUseCaseInteractor {
