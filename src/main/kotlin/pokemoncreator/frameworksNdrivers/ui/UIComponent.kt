@@ -11,8 +11,10 @@ import pokemoncreator.interfaceadapters.ports.PokemonView
 class UIComponent: PokemonView {
 
     //region Do not open!
+    var workIsDone = false
     private val uiScope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
     private var loadingJob : Job? = null
+    private fun setWorkFinished() = run { workIsDone = true }
     private fun showLoading() {
         loadingJob?.cancel()
         loadingJob = uiScope.launch {
@@ -72,6 +74,7 @@ class UIComponent: PokemonView {
         stopLoading()
         println("Pokemon created successfully!!")
         println("Pokemon is: $pokemonUIModel")
+        setWorkFinished()
     }
 
     override fun onPokemonCreationFailed(errorMessage: String) {
@@ -80,5 +83,6 @@ class UIComponent: PokemonView {
             Pokemon creation failed :( :( 
             Message: $errorMessage
         """.trimIndent())
+        setWorkFinished()
     }
 }
