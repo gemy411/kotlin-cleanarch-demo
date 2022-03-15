@@ -1,8 +1,8 @@
 package pokemoncreator.interfaceadapters.ports
 
-import pokemoncreator.entity.model.PokemonDataEntity
+import pokemoncreator.interfaceadapters.models.PokemonNetworkResponseModel
 import pokemoncreator.usecase.interactor.model.CreatePokemonRequestModel
 
 interface PokemonRemoteCreator {
-    suspend fun createPokemon(requestData: CreatePokemonRequestModel): PokemonDataEntity
+    suspend fun createPokemon(requestData: CreatePokemonRequestModel): PokemonNetworkResponseModel
 }

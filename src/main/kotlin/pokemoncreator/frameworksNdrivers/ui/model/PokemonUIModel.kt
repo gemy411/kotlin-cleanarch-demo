@@ -1,8 +1,8 @@
 package pokemoncreator.frameworksNdrivers.ui.model
 
+import pokemoncreator.entity.model.PokemonColors
 import pokemoncreator.entity.model.PokemonDataEntity
-import pokemoncreator.interfaceadapters.models.PokemonColors
-import pokemoncreator.interfaceadapters.models.PokemonType
+import pokemoncreator.entity.model.PokemonType
 
 data class PokemonUIModel(
     val name: String,
@@ -15,7 +15,7 @@ data class PokemonUIModel(
 fun PokemonDataEntity.toUI() = PokemonUIModel(
     name = name ,
     description = description,
-    type = PokemonType.values().find { it.name.lowercase() == type.lowercase() } ?: throw IllegalArgumentException("Type not supported!"),
+    type = type,
     power = power,
-    color = PokemonColors.values().find { it.name.lowercase() == color.lowercase() } ?: throw IllegalArgumentException("Color not supported!"),
+    color = color,
 )

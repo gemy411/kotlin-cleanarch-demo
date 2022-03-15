@@ -1,10 +1,10 @@
 package pokemoncreator.frameworksNdrivers.ui
 
 import kotlinx.coroutines.*
+import pokemoncreator.entity.model.PokemonColors
+import pokemoncreator.entity.model.PokemonType
 import pokemoncreator.frameworksNdrivers.di.Injector
 import pokemoncreator.frameworksNdrivers.ui.model.PokemonUIModel
-import pokemoncreator.interfaceadapters.models.PokemonColors
-import pokemoncreator.interfaceadapters.models.PokemonType
 import pokemoncreator.interfaceadapters.ports.PokemonView
 
 

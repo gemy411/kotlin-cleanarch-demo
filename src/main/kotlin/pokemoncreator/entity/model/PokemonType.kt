@@ -1,4 +1,4 @@
-package pokemoncreator.interfaceadapters.models
+package pokemoncreator.entity.model
 
 enum class PokemonType {
     FIRE, EARTH, WATER
