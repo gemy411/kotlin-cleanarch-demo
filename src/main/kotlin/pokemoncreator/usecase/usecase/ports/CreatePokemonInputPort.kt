@@ -1,6 +1,6 @@
-package pokemoncreator.domain.usecase.ports
+package pokemoncreator.usecase.usecase.ports
 
-import pokemoncreator.domain.model.CreatePokemonRequestModel
+import pokemoncreator.usecase.usecase.model.CreatePokemonRequestModel
 
 interface CreatePokemonInputPort {
     suspend fun execute(createPokemonRequestModel: CreatePokemonRequestModel)

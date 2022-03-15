@@ -1,9 +1,8 @@
 package pokemoncreator.interfaceadapters.controller
 
-import pokemoncreator.domain.model.CreatePokemonRequestModel
-import pokemoncreator.domain.usecase.ports.CreatePokemonInputPort
 import kotlinx.coroutines.*
-import java.util.*
+import pokemoncreator.usecase.usecase.model.CreatePokemonRequestModel
+import pokemoncreator.usecase.usecase.ports.CreatePokemonInputPort
 
 class PokemonCreatorController(private val createPokemonUseCaseInput: CreatePokemonInputPort) {
     private val controllerScope = CoroutineScope(SupervisorJob() + Dispatchers.Default)

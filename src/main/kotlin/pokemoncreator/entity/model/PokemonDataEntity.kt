@@ -1,6 +1,6 @@
-package pokemoncreator.domain.model
+package pokemoncreator.entity.model
 
-data class CreatePokemonRequestModel(
+data class PokemonDataEntity(
     val name: String,
     val description: String,
     val type: String,

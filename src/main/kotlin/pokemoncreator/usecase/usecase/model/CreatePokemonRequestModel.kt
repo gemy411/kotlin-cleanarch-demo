@@ -1,6 +1,6 @@
-package pokemoncreator.domain.model
+package pokemoncreator.usecase.usecase.model
 
-data class PokemonDomainModel(
+data class CreatePokemonRequestModel(
     val name: String,
     val description: String,
     val type: String,
