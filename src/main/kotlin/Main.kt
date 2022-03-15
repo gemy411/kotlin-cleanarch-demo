@@ -1,5 +1,5 @@
 import kotlinx.coroutines.delay
-import pokemoncreator.ui.UIComponent
+import pokemoncreator.frameworksNdrivers.ui.UIComponent
 
 suspend fun main(args: Array<String>) {
     UIComponent()

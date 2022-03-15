@@ -1,6 +1,6 @@
 package pokemoncreator.interfaceadapters.ports
 
-import pokemoncreator.ui.model.PokemonUIModel
+import pokemoncreator.frameworksNdrivers.ui.model.PokemonUIModel
 
 interface PokemonView {
     fun onPokemonCreated(pokemonUIModel: PokemonUIModel)

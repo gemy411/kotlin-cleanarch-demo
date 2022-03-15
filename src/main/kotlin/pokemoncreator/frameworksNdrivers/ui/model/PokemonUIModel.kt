@@ -1,4 +1,4 @@
-package pokemoncreator.ui.model
+package pokemoncreator.frameworksNdrivers.ui.model
 
 import pokemoncreator.entity.model.PokemonDataEntity
 import pokemoncreator.interfaceadapters.models.PokemonColors

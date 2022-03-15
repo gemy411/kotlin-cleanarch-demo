@@ -1,33 +1,16 @@
-package pokemoncreator.ui
+package pokemoncreator.frameworksNdrivers.ui
 
 import kotlinx.coroutines.*
-import pokemoncreator.interfaceadapters.controller.PokemonCreatorController
-import pokemoncreator.interfaceadapters.gateway.PokemonCreatorImpl
+import pokemoncreator.frameworksNdrivers.di.Injector
+import pokemoncreator.frameworksNdrivers.ui.model.PokemonUIModel
 import pokemoncreator.interfaceadapters.models.PokemonColors
 import pokemoncreator.interfaceadapters.models.PokemonType
 import pokemoncreator.interfaceadapters.ports.PokemonView
-import pokemoncreator.interfaceadapters.presenter.PokemonPresenter
-import pokemoncreator.ui.model.PokemonUIModel
-import pokemoncreator.usecase.usecase.CreatePokemonUseCaseInteractor
 
 
 class UIComponent: PokemonView {
 
     //region Do not open!
-    // DI section
-    // data
-    private val pokemonCreationGateway = PokemonCreatorImpl()
-    //adapter
-    private val presenter by lazy {
-        PokemonPresenter(this)
-    }
-
-    // User case inter-actor
-    private val createPokemonUseCase  = CreatePokemonUseCaseInteractor(pokemonCreationGateway, presenter)
-
-    // adapter
-    private val controller = PokemonCreatorController(createPokemonUseCase)
-
     private val uiScope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
     private var loadingJob : Job? = null
     private fun showLoading() {
@@ -75,7 +58,7 @@ class UIComponent: PokemonView {
 
         showLoading()
 
-        controller.createPokemon(
+        Injector.getPokemonCreatorController(this).createPokemon(
             name ?: "No name",
             desc,
             type,
