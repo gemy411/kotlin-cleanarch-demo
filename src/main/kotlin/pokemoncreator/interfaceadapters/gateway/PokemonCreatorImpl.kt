@@ -3,8 +3,8 @@ package pokemoncreator.interfaceadapters.gateway
 import pokemoncreator.entity.model.PokemonDataEntity
 import pokemoncreator.interfaceadapters.models.toEntity
 import pokemoncreator.interfaceadapters.ports.PokemonRemoteCreator
-import pokemoncreator.usecase.interactor.model.CreatePokemonRequestModel
-import pokemoncreator.usecase.interactor.ports.PokemonCreator
+import pokemoncreator.usecase.createpokemon.model.CreatePokemonRequestModel
+import pokemoncreator.usecase.createpokemon.ports.PokemonCreator
 
 class PokemonCreatorImpl(private val pokemonRemoteCreator: PokemonRemoteCreator): PokemonCreator {
     override suspend fun createPokemon(requestData: CreatePokemonRequestModel): PokemonDataEntity {

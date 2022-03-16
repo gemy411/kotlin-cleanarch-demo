@@ -1,9 +1,9 @@
-package pokemoncreator.usecase.interactor
+package pokemoncreator.usecase.createpokemon
 
-import pokemoncreator.usecase.interactor.model.CreatePokemonRequestModel
-import pokemoncreator.usecase.interactor.ports.CreatePokemonInputPort
-import pokemoncreator.usecase.interactor.ports.CreatePokemonOutputPort
-import pokemoncreator.usecase.interactor.ports.PokemonCreator
+import pokemoncreator.usecase.createpokemon.model.CreatePokemonRequestModel
+import pokemoncreator.usecase.createpokemon.ports.CreatePokemonInputPort
+import pokemoncreator.usecase.createpokemon.ports.CreatePokemonOutputPort
+import pokemoncreator.usecase.createpokemon.ports.PokemonCreator
 
 class CreatePokemonUseCaseInteractor(
     private val pokemonCreator: PokemonCreator,

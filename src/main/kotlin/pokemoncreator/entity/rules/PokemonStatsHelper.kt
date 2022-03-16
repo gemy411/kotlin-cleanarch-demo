@@ -10,5 +10,5 @@ fun PokemonDataEntity.canBeat(otherPokemon: PokemonDataEntity): Boolean {
         EARTH -> otherPokemon.type == WATER
         WATER -> otherPokemon.type != FIRE
     }
-    return listOf(higherPower, classUpperHand)[(1..2).random()]
+    return listOf(higherPower, classUpperHand)[(0..1).random()]
 }

@@ -3,7 +3,7 @@ package pokemoncreator.frameworksNdrivers.network.remote
 import kotlinx.coroutines.delay
 import pokemoncreator.interfaceadapters.models.PokemonNetworkResponseModel
 import pokemoncreator.interfaceadapters.ports.PokemonRemoteCreator
-import pokemoncreator.usecase.interactor.model.CreatePokemonRequestModel
+import pokemoncreator.usecase.createpokemon.model.CreatePokemonRequestModel
 
 /**
  * This is where the actual http request is being made. But, if you are using an ORM wrapping the http requests into a

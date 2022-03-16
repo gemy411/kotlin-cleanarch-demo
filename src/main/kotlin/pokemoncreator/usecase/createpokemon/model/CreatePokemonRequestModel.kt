@@ -1,4 +1,4 @@
-package pokemoncreator.usecase.interactor.model
+package pokemoncreator.usecase.createpokemon.model
 
 data class CreatePokemonRequestModel(
     val name: String,

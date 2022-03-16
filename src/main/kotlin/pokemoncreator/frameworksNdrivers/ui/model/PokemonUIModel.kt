@@ -19,3 +19,10 @@ fun PokemonDataEntity.toUI() = PokemonUIModel(
     power = power,
     color = color,
 )
+fun PokemonUIModel.toEntity() = PokemonDataEntity(
+    name = name ,
+    description = description,
+    type = type,
+    power = power,
+    color = color,
+)
