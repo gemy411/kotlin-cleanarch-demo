@@ -5,7 +5,7 @@ import pokemoncreator.entity.model.PokemonColors
 import pokemoncreator.entity.model.PokemonType
 import pokemoncreator.frameworksNdrivers.di.Injector
 import pokemoncreator.frameworksNdrivers.ui.model.PokemonUIModel
-import pokemoncreator.interfaceadapters.ports.PokemonView
+import pokemoncreator.interfaceadapters.view.PokemonView
 
 
 class UIComponent: PokemonView {

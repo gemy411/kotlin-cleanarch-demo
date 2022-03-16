@@ -3,7 +3,7 @@ package pokemoncreator.interfaceadapters.presenter
 import pokemoncreator.entity.model.PokemonDataEntity
 import pokemoncreator.frameworksNdrivers.ui.model.PokemonUIModel
 import pokemoncreator.frameworksNdrivers.ui.model.toUI
-import pokemoncreator.interfaceadapters.ports.PokemonView
+import pokemoncreator.interfaceadapters.view.PokemonView
 import pokemoncreator.usecase.checkwinner.ports.CheckWinnerOutPutPort
 import pokemoncreator.usecase.createpokemon.ports.CreatePokemonOutputPort
 

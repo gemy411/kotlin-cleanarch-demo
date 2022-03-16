@@ -3,8 +3,8 @@ package pokemoncreator.frameworksNdrivers.di
 import pokemoncreator.frameworksNdrivers.network.remote.PokemonRemoteCreatorImpl
 import pokemoncreator.interfaceadapters.controller.PokemonCreatorController
 import pokemoncreator.interfaceadapters.gateway.PokemonCreatorImpl
-import pokemoncreator.interfaceadapters.ports.PokemonView
 import pokemoncreator.interfaceadapters.presenter.PokemonPresenter
+import pokemoncreator.interfaceadapters.view.PokemonView
 import pokemoncreator.usecase.checkwinner.CheckWinnerPokemonInteractor
 import pokemoncreator.usecase.createpokemon.CreatePokemonUseCaseInteractor
 

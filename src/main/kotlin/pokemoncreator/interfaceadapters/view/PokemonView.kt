@@ -1,4 +1,4 @@
-package pokemoncreator.interfaceadapters.ports
+package pokemoncreator.interfaceadapters.view
 
 import pokemoncreator.frameworksNdrivers.ui.model.PokemonUIModel
 
