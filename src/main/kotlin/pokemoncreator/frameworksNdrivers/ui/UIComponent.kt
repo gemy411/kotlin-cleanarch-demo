@@ -15,7 +15,10 @@ class UIComponent: PokemonView {
     private val uiScope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
     private val controller = Injector.getPokemonCreatorController(this)
     private var loadingJob : Job? = null
-    private fun setWorkFinished() = run { workIsDone = true }
+    private fun setWorkFinished() {
+        uiScope.cancel()
+        workIsDone = true
+    }
     private fun showLoading() {
         loadingJob?.cancel()
         loadingJob = uiScope.launch {

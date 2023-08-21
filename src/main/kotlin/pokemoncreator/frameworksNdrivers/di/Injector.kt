@@ -9,7 +9,7 @@ import pokemoncreator.usecase.checkwinner.CheckWinnerPokemonInteractor
 import pokemoncreator.usecase.createpokemon.CreatePokemonUseCaseInteractor
 
 object Injector {
-    var presenter: PokemonPresenter? = null
+    private var presenter: PokemonPresenter? = null
     private fun getPresenter(view: PokemonView) : PokemonPresenter {
         if (presenter == null) {
             presenter = PokemonPresenter(view)
